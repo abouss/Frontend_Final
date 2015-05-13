@@ -2,30 +2,24 @@ app.factory('Homework', function () {
 
     return [{
         assignment: 'Test First JavaScript',
-        url: 'http://github.com/myusername/TestFirst',
+        url: 'https://github.com/abouss/test_first_javascript',
         status: 'completed'
     },
         {
             assignment: 'Angular Day 1',
-            url: 'http://github.com/myusername/TestFirst',
+            url: 'https://github.com/abouss/angular_flashcards',
             status: 'completed'
         },
 
         {
             assignment: 'Angular Day 2',
-            url: 'http://github.com/myusername/TestFirst',
+            url: 'https://github.com/abouss/flash-cards',
             status: 'completed'
         },
 
         {
             assignment: 'Angular Day 3',
-            url: 'http://github.com/myusername/TestFirst',
-            status: 'Started'
-        },
-
-        {
-            assignment: 'Angular Day 4',
-            url: 'http://github.com/myusername/TestFirst',
+            url: '#',
             status: 'Not Started'
         }];
 

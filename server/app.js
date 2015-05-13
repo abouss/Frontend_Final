@@ -1,6 +1,5 @@
 var path = require('path');
 var express = require('express');
-var FlashCardModel = require('./models/flash-card-model');
 
 var app = express(); // Create an express app!
 module.exports = app; // Export it so it can be require('')'d
@@ -10,6 +9,9 @@ var publicPath = path.join(__dirname, '../public');
 
 // The path of our index.html file. ([ROOT]/index.html)
 var indexHtmlPath = path.join(__dirname, '../index.html');
+
+//The path of our about.html file. ([ROOT]/about.html)
+var aboutHtmlPath = path.join(__dirname, '../about.html');
 
 // http://nodejs.org/docs/latest/api/globals.html#globals_dirname
 // for more information about __dirname
@@ -27,23 +29,11 @@ app.get('/', function (req, res) {
     res.sendFile(indexHtmlPath);
 });
 
+app.get('/about', function (req, res) {
+    res.sendFile(aboutHtmlPath);
+});
+
 app.use(function (req, res, next) {
 	//console.log('made it')
 	next();
-});
-
-app.get('/cards', function (req, res) {
-
-    var modelParams = {};
-
-    if (req.query.category) {
-    	modelParams.category = req.query.category;
-    }
-
-    FlashCardModel.find(modelParams, function (err, cards) {
-        setTimeout(function () {
-            res.send(cards);
-        }, Math.random() * 1000);
-    });
-
 });

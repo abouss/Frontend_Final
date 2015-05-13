@@ -5,7 +5,8 @@ app.controller('MainController', function ($scope, Homework) {
     $scope.assignments = Homework;
 
 
-
-
+    $scope.moreInfo= function (assignment) {
+        assignment.show = correct;
+    };
 
 });
